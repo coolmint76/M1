@@ -114,7 +114,17 @@ class T2MappingApp:
         """Create correction options panel"""
         corr_frame = ttk.LabelFrame(self.left_panel, text="Correction Options", padding=10)
         corr_frame.pack(fill=tk.X, pady=(0, 10))
-        
+
+        ttk.Label(corr_frame, text="Sequence Type:").pack(anchor=tk.W, pady=(10, 0))
+        self.sequence_type_var = tk.StringVar(value="bSSFP")
+        sequence_frame = ttk.Frame(corr_frame)
+        sequence_frame.pack(fill=tk.X)
+        ttk.Radiobutton(sequence_frame, text="bSSFP", 
+                       variable=self.sequence_type_var, 
+                       value="bSSFP").pack(side=tk.LEFT)
+        ttk.Radiobutton(sequence_frame, text="GRE", 
+                       variable=self.sequence_type_var, 
+                       value="GRE").pack(side=tk.LEFT)
         # Noise floor correction
         self.noise_correction_var = tk.BooleanVar(value=True)
         ttk.Checkbutton(corr_frame, text="Noise Floor Correction", 
@@ -131,7 +141,7 @@ class T2MappingApp:
                        variable=self.b1_correction_var).pack(anchor=tk.W, pady=2)
         
         # Stimulated echo correction
-        self.stim_echo_var = tk.BooleanVar(value=True)
+        self.stim_echo_var = tk.BooleanVar(value=False)
         ttk.Checkbutton(corr_frame, text="Stimulated Echo Correction", 
                        variable=self.stim_echo_var).pack(anchor=tk.W, pady=2)
         
@@ -929,96 +939,96 @@ class T2MappingApp:
     def fit_t2_with_corrections(self, te_preps, signal, apply_noise_correction=True,
                            apply_b1_correction=False, apply_stim_echo_correction=False,
                            apply_t1_correction=False):
-    """
-    Fit T2 with scientifically accurate corrections
-    Based on Giri et al. JCMR 2009 and Kellman et al. JCMR 2014
-    """
-    
-    # Check if signal is valid
-    if np.all(signal == 0) or np.any(np.isnan(signal)) or np.all(signal == signal[0]):
-        return 0.0, 0.0, {}
-    
-    # Noise floor correction using method from Kellman et al.
-    if apply_noise_correction and self.noise_level is not None:
-        # More sophisticated noise correction
-        # Consider truncating data points below 2*noise_level
-        noise_threshold = 2 * self.noise_level
-        valid_idx = signal > noise_threshold
+        """
+        Fit T2 with scientifically accurate corrections
+        Based on Giri et al. JCMR 2009 and Kellman et al. JCMR 2014
+        """
         
-        if np.sum(valid_idx) < 3:  # Need at least 3 points
+        # Check if signal is valid
+        if np.all(signal == 0) or np.any(np.isnan(signal)) or np.all(signal == signal[0]):
             return 0.0, 0.0, {}
+        
+        # Noise floor correction using method from Kellman et al.
+        if apply_noise_correction and self.noise_level is not None:
+            # More sophisticated noise correction
+            # Consider truncating data points below 2*noise_level
+            noise_threshold = 2 * self.noise_level
+            valid_idx = signal > noise_threshold
             
-        te_valid = te_preps[valid_idx]
-        signal_valid = signal[valid_idx]
-        
-        # Apply Rician noise correction to valid points
-        signal_corrected = np.sqrt(np.maximum(signal_valid**2 - self.noise_level**2, 0))
-    else:
-        signal_corrected = signal.copy()
-        te_valid = te_preps
-        valid_idx = np.ones(len(signal), dtype=bool)
-    
-    # Implement 3-parameter model as recommended for cardiac T2 mapping
-    def t2_model_3param(te, s0, t2, c):
-        return s0 * np.exp(-te / t2) + c
-    
-    try:
-        # Initial parameter estimation
-        # Use log-linear regression on early echo times for initial T2
-        if len(te_valid) >= 3:
-            # Use only first 3 points for initial estimate (less affected by noise)
-            early_idx = min(3, len(te_valid))
-            log_signal = np.log(signal_corrected[:early_idx] + 1e-10)
-            slope, intercept = np.polyfit(te_valid[:early_idx], log_signal, 1)
-            t2_init = -1.0 / slope if slope < 0 else 50.0
-            s0_init = np.exp(intercept)
+            if np.sum(valid_idx) < 3:  # Need at least 3 points
+                return 0.0, 0.0, {}
+                
+            te_valid = te_preps[valid_idx]
+            signal_valid = signal[valid_idx]
+            
+            # Apply Rician noise correction to valid points
+            signal_corrected = np.sqrt(np.maximum(signal_valid**2 - self.noise_level**2, 0))
         else:
-            t2_init = 50.0
-            s0_init = signal_corrected[0]
+            signal_corrected = signal.copy()
+            te_valid = te_preps
+            valid_idx = np.ones(len(signal), dtype=bool)
         
-        c_init = self.noise_level if apply_noise_correction else 0
+        # Implement 3-parameter model as recommended for cardiac T2 mapping
+        def t2_model_3param(te, s0, t2, c):
+            return s0 * np.exp(-te / t2) + c
         
-        # Perform fitting with reasonable bounds
-        popt, pcov = opt.curve_fit(
-            t2_model_3param, te_valid, signal_corrected,
-            p0=[s0_init, t2_init, c_init],
-            bounds=([0, 10, 0], [np.inf, 200, np.inf]),  # T2 typically 10-200ms for myocardium
-            maxfev=5000
-        )
-        
-        s0, t2, c = popt
-        
-        # Calculate fit quality metrics
-        fitted = t2_model_3param(te_valid, s0, t2, c)
-        residuals = signal_corrected - fitted
-        ss_res = np.sum(residuals**2)
-        ss_tot = np.sum((signal_corrected - np.mean(signal_corrected))**2)
-        r2 = 1 - (ss_res / ss_tot) if ss_tot > 0 else 0
-        
-        # Calculate confidence interval
-        if len(pcov) > 0:
-            t2_std = np.sqrt(pcov[1, 1])
-            t2_ci = 1.96 * t2_std  # 95% confidence interval
-        else:
-            t2_ci = 0
-        
-        # No arbitrary correction factors!
-        # Any corrections should be based on specific sequence parameters
-        
-        params = {
-            's0': s0,
-            't2': t2,
-            'c': c,
-            'r2': r2,
-            't2_ci': t2_ci,
-            'n_points_used': len(te_valid)
-        }
-        
-        return t2, r2, params
-        
-    except Exception as e:
-        print(f"T2 fitting failed: {e}")
-        return 0.0, 0.0, {}
+        try:
+            # Initial parameter estimation
+            # Use log-linear regression on early echo times for initial T2
+            if len(te_valid) >= 3:
+                # Use only first 3 points for initial estimate (less affected by noise)
+                early_idx = min(3, len(te_valid))
+                log_signal = np.log(signal_corrected[:early_idx] + 1e-10)
+                slope, intercept = np.polyfit(te_valid[:early_idx], log_signal, 1)
+                t2_init = -1.0 / slope if slope < 0 else 50.0
+                s0_init = np.exp(intercept)
+            else:
+                t2_init = 50.0
+                s0_init = signal_corrected[0]
+            
+            c_init = self.noise_level if apply_noise_correction else 0
+            
+            # Perform fitting with reasonable bounds
+            popt, pcov = opt.curve_fit(
+                t2_model_3param, te_valid, signal_corrected,
+                p0=[s0_init, t2_init, c_init],
+                bounds=([0, 10, 0], [np.inf, 200, np.inf]),  # T2 typically 10-200ms for myocardium
+                maxfev=5000
+            )
+            
+            s0, t2, c = popt
+            
+            # Calculate fit quality metrics
+            fitted = t2_model_3param(te_valid, s0, t2, c)
+            residuals = signal_corrected - fitted
+            ss_res = np.sum(residuals**2)
+            ss_tot = np.sum((signal_corrected - np.mean(signal_corrected))**2)
+            r2 = 1 - (ss_res / ss_tot) if ss_tot > 0 else 0
+            
+            # Calculate confidence interval
+            if len(pcov) > 0:
+                t2_std = np.sqrt(pcov[1, 1])
+                t2_ci = 1.96 * t2_std  # 95% confidence interval
+            else:
+                t2_ci = 0
+            
+            # No arbitrary correction factors!
+            # Any corrections should be based on specific sequence parameters
+            
+            params = {
+                's0': s0,
+                't2': t2,
+                'c': c,
+                'r2': r2,
+                't2_ci': t2_ci,
+                'n_points_used': len(te_valid)
+            }
+            
+            return t2, r2, params
+            
+        except Exception as e:
+            print(f"T2 fitting failed: {e}")
+            return 0.0, 0.0, {}
 
     def estimate_noise_level(self):
         """Estimate noise level from background regions"""
@@ -1265,7 +1275,7 @@ class T2MappingApp:
             self.t2_map[outlier_mask] = t2_median[outlier_mask]
 
             # Set physiologically implausible values to zero
-            self.t2_map[(self.t2_map < 10) | (self.t2_map > 150)] = 0
+            self.t2_map[(self.t2_map < 20) | (self.t2_map > 150)] = 0
 
             # Optional: Also clean up the R² map
             self.r2_map[self.t2_map == 0] = 0
@@ -1297,6 +1307,10 @@ class T2MappingApp:
             self.display_t2_map()
             
             self.update_status("T2 calculation complete")
+
+            n_failed = np.sum((self.r2_map < 0.8) | (self.t2_map == 0))
+            success_rate = 100 * (1 - n_failed / self.t2_map.size)
+            print(f"Fitting success rate: {success_rate:.1f}%")
             
         except Exception as e:
             self.update_status("Error calculating T2")
