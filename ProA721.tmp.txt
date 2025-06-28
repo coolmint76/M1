@@ -1,0 +1,652 @@
+TableName = 00EVENT_TABLE_ code = 13 length = 240
+	 Event Table
+	 1:	 duration =      100	 RFC ADC
+	 2:	 duration =        0	 Repeat
+	 3:	 duration =        0	 Repeat
+	 4:	 duration =        0	 Repeat
+	 5:	 duration =        0	 Repeat
+	 6:	 duration =        0	 Repeat
+	 7:	 duration =        0	 Repeat
+	 8:	 duration =        0	 Repeat
+	 9:	 duration =        0	 RFC
+	 10:	 duration =        0	 RFC
+	 11:	 duration =        0	 RFC
+	 12:	 duration =        8	 RFC Grad X Grad Y Grad Z
+	 13:	 duration =      120	 Delay
+	 14:	 duration =      150	 RFC
+	 15:	 duration =       20	 RFC SG
+	 16:	 duration =      180	 RFC SEP
+	 17:	 duration =      120	 Grad X Grad Y Grad Z
+	 18:	 duration =        0	 RFC
+	 19:	 duration =        0	 RFC
+	 20:	 duration =       28	 RFC SG Grad X Grad Y Grad Z
+	 21:	 duration =      120	 Grad X Grad Y Grad Z
+	 22:	 duration =      904	 ADC
+	 23:	 duration =      172	 Grad X Grad Y Grad Z
+	 24:	 duration =      120	 Grad X Grad Y Grad Z
+	 25:	 duration =     1580	 Delay
+	 26:	 duration =        0	 RFC
+	 27:	 duration =      184	 Grad X Grad Y Grad Z
+	 28:	 duration =       34	 Grad X Grad Y Grad Z
+	 29:	 duration =        0	 RFC
+	 30:	 duration =       12	 Grad X Grad Y Grad Z
+	 31:	 duration =        0	 Repeat
+	 32:	 duration =        0	 Repeat
+	 33:	 duration =        0	 Repeat
+	 34:	 duration =        0	 Repeat
+	 35:	 duration =        0	 Repeat
+	 36:	 duration =        0	 Repeat
+	 37:	 duration =        0	 Grad X Grad Y Grad Z
+	 38:	 duration =       20	 ADC SG SEP
+	 39:	 duration =        0	 Repeat
+	 40:	 duration =        0	 Repeat
+
+TableName = 00EVENT_DATA_ code = 14 length = 4064
+	 Event Data
+	 Serial Num:   1 length2 = 50
+		 RFC_TRNG	Base =         43 	 numFifos = 0
+		 ADC_SPNT	Base =          1 	 numFifos = 0
+		 ADC_SPCH	Base =          1 	 numFifos = 0
+		 ADC_SELECT	Base =          2 	 numFifos = 0
+		 ADC_BAND	Base =        281 	 numFifos = 0
+		 RFC_RCVG	Base =         -9 	 numFifos = 0
+	 Serial Num:   2 length2 = 10
+		 ETC_REP	Base =          1 	 numFifos = 0
+	 Serial Num:   3 length2 = 10
+		 ETC_REP	Base =          1 	 numFifos = 0
+	 Serial Num:   4 length2 = 10
+		 ETC_REP	Base =          1 	 numFifos = 0
+	 Serial Num:   5 length2 = 10
+		 ETC_REP	Base =          1 	 numFifos = 0
+	 Serial Num:   6 length2 = 10
+		 ETC_REP	Base =          1 	 numFifos = 0
+	 Serial Num:   7 length2 = 10
+		 ETC_REP	Base =          1 	 numFifos = 0
+	 Serial Num:   8 length2 = 10
+		 ETC_REP	Base =          5 	 numFifos = 0
+	 Serial Num:   9 length2 = 10
+		 RFC_RXON	Base =          0 	 numFifos = 0
+	 Serial Num:  10 length2 = 10
+		 RFC_TXON	Base =          0 	 numFifos = 0
+	 Serial Num:  11 length2 = 10
+		 RFC_RFON	Base =          0 	 numFifos = 0
+	 Serial Num:  12 length2 = 266
+		 RFC_TRNG	Base =         43 	 numFifos = 0
+		 RFC_RCVG	Base =          1 	 numFifos = 1
+			Avg( 00RxGain )
+		 GRX_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00xExcite )
+		 GRX_SPNT	Base =          2 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =          0 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00yExcite )
+		 GRY_SPNT	Base =          2 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =          0 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00zExcite )
+		 GRZ_SPNT	Base =          2 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =          0 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  13 length2 = 10
+		 ETC_DELAY	Base =          0 	 numFifos = 0
+	 Serial Num:  14 length2 = 10
+		 RFC_RFON	Base =          1 	 numFifos = 0
+	 Serial Num:  15 length2 = 218
+		 RFC_TXON	Base =          1 	 numFifos = 0
+		 SG_PHASE	Base =          1 	 numFifos = 5
+			Slab( 00flipPh )
+			SE( 00flipPh )
+			PE1( 00flipPh )
+			Avg( 00flipPh )
+			PE2( 00flipPh )
+		 SG_FREQ	Base =          1 	 numFifos = 1
+			Slab( 00exciteDf )
+	 Serial Num:  16 length2 = 74
+		 SP_IADR	Base =          2 	 numFifos = 0
+		 SP_IAMP	Base =      32128 	 numFifos = 0
+		 SP_IOFST	Base =          0 	 numFifos = 0
+		 SP_QADR	Base =          2 	 numFifos = 0
+		 SP_QAMP	Base =          0 	 numFifos = 0
+		 SP_QOFST	Base =          0 	 numFifos = 0
+		 SP_SPNT	Base =        300 	 numFifos = 0
+		 SP_SPCH	Base =          4 	 numFifos = 0
+		 RFC_TP2	Base =          1 	 numFifos = 0
+	 Serial Num:  17 length2 = 218
+		 GRX_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00xTune0a )
+		 GRX_SPNT	Base =         17 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =        302 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00yTune0a )
+		 GRY_SPNT	Base =         17 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =        302 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00zTune0a )
+		 GRZ_SPNT	Base =         17 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =        302 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  18 length2 = 10
+		 RFC_TXON	Base =          0 	 numFifos = 0
+	 Serial Num:  19 length2 = 10
+		 RFC_RFON	Base =          0 	 numFifos = 0
+	 Serial Num:  20 length2 = 498
+		 SG_PHASE	Base =          1 	 numFifos = 5
+			Slab( 00recPh )
+			SE( 00recPh )
+			PE1( 00recPh )
+			Avg( 00recPh )
+			PE2( 00recPh )
+		 SG_FREQ	Base =          1 	 numFifos = 3
+			Slab( 00show0Df )
+			PE1( 00show0Df )
+			PE2( 00show0Df )
+		 GRX_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00xShow0grPre )
+		 GRX_SPNT	Base =          7 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =        319 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00yShow0grPre )
+		 GRY_SPNT	Base =          7 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =        319 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00zShow0grPre )
+		 GRZ_SPNT	Base =          7 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =        319 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+		 RFC_RXON	Base =          1 	 numFifos = 0
+	 Serial Num:  21 length2 = 410
+		 GRX_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00xShow0 )
+			PE1( 00xShow0 )
+			PE2( 00xShow0 )
+		 GRX_SPNT	Base =         43 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =        326 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00yShow0 )
+			PE1( 00yShow0 )
+			PE2( 00yShow0 )
+		 GRY_SPNT	Base =         43 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =        326 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00zShow0 )
+			PE1( 00zShow0 )
+			PE2( 00zShow0 )
+		 GRZ_SPNT	Base =         43 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =        326 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  22 length2 = 194
+		 ADC_SPNT	Base =        128 	 numFifos = 0
+		 ADC_SPCH	Base =          8 	 numFifos = 0
+		 ADC_SELECT	Base =          1 	 numFifos = 0
+		 ADC_FEP	Base =          1 	 numFifos = 5
+			Slab( 00adcPh )
+			SE( 00adcPh )
+			PE1( 00adcPh )
+			Avg( 00adcPh )
+			PE2( 00adcPh )
+	 Serial Num:  23 length2 = 410
+		 GRX_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00xShow0grFall )
+			PE1( 00xShow0grFall )
+			PE2( 00xShow0grFall )
+		 GRX_SPNT	Base =         43 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =        326 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00yShow0grFall )
+			PE1( 00yShow0grFall )
+			PE2( 00yShow0grFall )
+		 GRY_SPNT	Base =         43 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =        326 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00zShow0grFall )
+			PE1( 00zShow0grFall )
+			PE2( 00zShow0grFall )
+		 GRZ_SPNT	Base =         43 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =        326 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  24 length2 = 410
+		 GRX_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00xEndSpoil )
+			PE1( 00xEndSpoil )
+			PE2( 00xEndSpoil )
+		 GRX_SPNT	Base =         46 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =        369 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00yEndSpoil )
+			PE1( 00yEndSpoil )
+			PE2( 00yEndSpoil )
+		 GRY_SPNT	Base =         46 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =        369 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 3
+			Slab( 00zEndSpoil )
+			PE1( 00zEndSpoil )
+			PE2( 00zEndSpoil )
+		 GRZ_SPNT	Base =         46 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =        369 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  25 length2 = 10
+		 ETC_DELAY	Base =          0 	 numFifos = 0
+	 Serial Num:  26 length2 = 10
+		 RFC_RXON	Base =          0 	 numFifos = 0
+	 Serial Num:  27 length2 = 218
+		 GRX_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00xEndFall )
+		 GRX_SPNT	Base =         46 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =        369 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00yEndFall )
+		 GRY_SPNT	Base =         46 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =        369 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00zEndFall )
+		 GRZ_SPNT	Base =         46 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =        369 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  28 length2 = 218
+		 GRX_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00xWaitTime )
+		 GRX_SPNT	Base =          2 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =          0 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00yWaitTime )
+		 GRY_SPNT	Base =          2 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =          0 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00zWaitTime )
+		 GRZ_SPNT	Base =          2 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =          0 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  29 length2 = 10
+		 RFC_RXON	Base =          0 	 numFifos = 0
+	 Serial Num:  30 length2 = 218
+		 GRX_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00xEndTime )
+		 GRX_SPNT	Base =          2 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =          0 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00yEndTime )
+		 GRY_SPNT	Base =          2 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =          0 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_LEVEL	Base =          1 	 numFifos = 1
+			Slab( 00zEndTime )
+		 GRZ_SPNT	Base =          2 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =          0 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+	 Serial Num:  31 length2 = 10
+		 ETC_REP	Base =          0 	 numFifos = 0
+	 Serial Num:  32 length2 = 10
+		 ETC_REP	Base =          0 	 numFifos = 0
+	 Serial Num:  33 length2 = 10
+		 ETC_REP	Base =          0 	 numFifos = 0
+	 Serial Num:  34 length2 = 10
+		 ETC_REP	Base =          0 	 numFifos = 0
+	 Serial Num:  35 length2 = 10
+		 ETC_REP	Base =          0 	 numFifos = 0
+	 Serial Num:  36 length2 = 10
+		 ETC_REP	Base =         -2 	 numFifos = 0
+	 Serial Num:  37 length2 = 146
+		 GRX_LEVEL	Base =          0 	 numFifos = 0
+		 GRX_SPNT	Base =          2 	 numFifos = 0
+		 GRX_SPCH	Base =         16 	 numFifos = 0
+		 GRX_ADDR	Base =          0 	 numFifos = 0
+		 GRX_WAVEL	Base =          1 	 numFifos = 0
+		 GRX_BOOST	Base =          0 	 numFifos = 0
+		 GRY_LEVEL	Base =          0 	 numFifos = 0
+		 GRY_SPNT	Base =          2 	 numFifos = 0
+		 GRY_SPCH	Base =         16 	 numFifos = 0
+		 GRY_ADDR	Base =          0 	 numFifos = 0
+		 GRY_WAVEL	Base =          1 	 numFifos = 0
+		 GRY_BOOST	Base =          0 	 numFifos = 0
+		 GRZ_LEVEL	Base =          0 	 numFifos = 0
+		 GRZ_SPNT	Base =          2 	 numFifos = 0
+		 GRZ_SPCH	Base =         16 	 numFifos = 0
+		 GRZ_ADDR	Base =          0 	 numFifos = 0
+		 GRZ_WAVEL	Base =          1 	 numFifos = 0
+		 GRZ_BOOST	Base =          0 	 numFifos = 0
+	 Serial Num:  38 length2 = 106
+		 SP_IADR	Base =          0 	 numFifos = 0
+		 SP_IAMP	Base =          0 	 numFifos = 0
+		 SP_IOFST	Base =          0 	 numFifos = 0
+		 SP_QADR	Base =          0 	 numFifos = 0
+		 SP_QAMP	Base =          0 	 numFifos = 0
+		 SP_QOFST	Base =          0 	 numFifos = 0
+		 SP_SPNT	Base =          2 	 numFifos = 0
+		 SP_SPCH	Base =         40 	 numFifos = 0
+		 SG_RST	Base =          0 	 numFifos = 0
+		 ADC_SPNT	Base =          1 	 numFifos = 0
+		 ADC_SPCH	Base =          1 	 numFifos = 0
+		 ADC_SELECT	Base =          2 	 numFifos = 0
+		 ADC_BAND	Base =        281 	 numFifos = 0
+	 Serial Num:  39 length2 = 10
+		 ETC_REP	Base =          0 	 numFifos = 0
+	 Serial Num:  40 length2 = 10
+		 ETC_REP	Base =         -1 	 numFifos = 0
+
+TableName = 00LOOP_ code = 3 length = 196
+	 Loop Info
+	LoopName   nestLevel  startState   endState   curMin   step   number
+             _RG           7           2         39        0      1        1
+          Steady           6           3         36        0      1        1
+            Slab           5           4         35        0      1        1
+              SE           4           5         34        0      1        1
+             PE1           3           6         33        0      1        1
+             Avg           2           7         32        0      1        1
+             PE2           1           8         31        0      1        5
+
+TableName = 00WAVEFORM_ code = 1 length = 830
+	 Wave Info OK
+
+TableName = 00FEP_ code = 2 length = 232
+	 FEP Info
+	 algorithm          = 1
+	 numLoops           = 7
+	 averageLoop        = 2
+	 transferLoop       = 5
+	 loopSortOrder      = 0
+	 overflowLoop       = 5
+	 steadyStateLoop    = 2
+	 dblChanByteCount   = 0
+	 dataFormat         = 2
+	 numEchos           = 1
+	 Averaging LoopName = Avg
+		 Loop : 0	 loopCount =    1
+		 Loop : 1	 loopCount =    5
+		 Loop : 2	 loopCount =    1
+		 Loop : 3	 loopCount =    1
+		 Loop : 4	 loopCount =    1
+		 Loop : 5	 loopCount =    1
+		 Loop : 6	 loopCount =    1
+
+		 echocount     = 1
+		 bufferLength  = 256
+		 startingPoint = 0
+		 samples       = 128
+		 DCoffsetI     = 0.000
+		 DCoffsetQ     = 0.000
+		 balance       = 1.000
+
+TableName = 00EXTERNAL_ code = 769 length = 116
+	External Info
+	xSlewUp = 110000.000 xSlewDown = 110000.000   xDylay = 32.000 xSWDylay = 0.000
+	ySlewUp = 110000.000 ySlewDown = 110000.000   yDylay = 32.000 ySWDylay = 0.000
+	zSlewUp = 110000.000 zSlewDown = 110000.000   zDylay = 32.000 zSWDylay = 0.000
+	User Pouse TR          = 3.700 (msec)
+	EPI Concentration      = 1
+	User Pause Steady Shot = 20.000
+	RM Mode                = 32
+	SkipRfPitch            = 4.000
+	SkipRfPoint            = 4
+	SkipRfMagic            = -1.000
+	RfcDCCorrFlag          = 0
+	RfcDCCorrPitch         = 0.000
+	RfcDCCorrPoint         = 0
+	RfcDCCorrDelay         = 0.000
+	HeatProtectMaxTemp1    = 85.000
+	HeatProtectMaxTe1      = 0.000
+	HeatProtectMaxTau1     = 0.000
+	HeatProtectMaxTemp2    = 70.000
+	HeatProtectMaxTe2      = 0.000
+	HeatProtectMaxTau2     = 0.000
+
+TableName = 00RxGain code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Avg)
+	 data[0] =    -9.000
+
+TableName = 00xExcite code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -3.411
+
+TableName = 00yExcite code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -2.676
+
+TableName = 00zExcite code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =  -523.756
+
+TableName = 00flipPh code = 15 length = 46
+	 FIFO Table Data dim = 5 Ccode = 65535
+	 Dim[1][1][1][1][5]		(Slab)(SE)(PE1)(Avg)(PE2)
+	 data[0][0][0][0][0] =     0.000
+	 data[0][0][0][0][1] =   117.000
+	 data[0][0][0][0][2] =   351.000
+	 data[0][0][0][0][3] =   342.000
+	 data[0][0][0][0][4] =    90.000
+
+TableName = 00exciteDf code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =     0.000
+
+TableName = 00xTune0a code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -3.411
+
+TableName = 00yTune0a code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -2.676
+
+TableName = 00zTune0a code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =  1472.176
+
+TableName = 00recPh code = 15 length = 46
+	 FIFO Table Data dim = 5 Ccode = 65535
+	 Dim[1][1][1][1][5]		(Slab)(SE)(PE1)(Avg)(PE2)
+	 data[0][0][0][0][0] =     0.000
+	 data[0][0][0][0][1] =   297.000
+	 data[0][0][0][0][2] =   351.000
+	 data[0][0][0][0][3] =   162.000
+	 data[0][0][0][0][4] =    90.000
+
+TableName = 00show0Df code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] =     0.000
+	 data[0][0][1] =     0.000
+	 data[0][0][2] =     0.000
+	 data[0][0][3] =     0.000
+	 data[0][0][4] =     0.000
+
+TableName = 00xShow0grPre code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -3.411
+
+TableName = 00yShow0grPre code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -2.676
+
+TableName = 00zShow0grPre code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =     9.667
+
+TableName = 00xShow0 code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] =  3131.873
+	 data[0][0][1] =   331.133
+	 data[0][0][2] = -6072.551
+	 data[0][0][3] =   331.133
+	 data[0][0][4] =  3131.873
+
+TableName = 00yShow0 code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] =  1849.457
+	 data[0][0][1] = -5555.065
+	 data[0][0][2] =    -2.676
+	 data[0][0][3] =  5549.713
+	 data[0][0][4] = -1854.809
+
+TableName = 00zShow0 code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] =  4864.979
+	 data[0][0][1] =  2437.323
+	 data[0][0][2] =     9.667
+	 data[0][0][3] = -2417.989
+	 data[0][0][4] = -4845.645
+
+TableName = 00adcPh code = 15 length = 46
+	 FIFO Table Data dim = 5 Ccode = 65535
+	 Dim[1][1][1][1][5]		(Slab)(SE)(PE1)(Avg)(PE2)
+	 data[0][0][0][0][0] =     0.000
+	 data[0][0][0][0][1] =     2.000
+	 data[0][0][0][0][2] =     0.000
+	 data[0][0][0][0][3] =     2.000
+	 data[0][0][0][0][4] =     0.000
+
+TableName = 00xShow0grFall code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] =    -3.411
+	 data[0][0][1] =    -3.411
+	 data[0][0][2] =    -3.411
+	 data[0][0][3] =    -3.411
+	 data[0][0][4] =    -3.411
+
+TableName = 00yShow0grFall code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] =    -2.676
+	 data[0][0][1] =    -2.676
+	 data[0][0][2] =    -2.676
+	 data[0][0][3] =    -2.676
+	 data[0][0][4] =    -2.676
+
+TableName = 00zShow0grFall code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] =     9.667
+	 data[0][0][1] =     9.667
+	 data[0][0][2] =     9.667
+	 data[0][0][3] =     9.667
+	 data[0][0][4] =     9.667
+
+TableName = 00xEndSpoil code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] = -1891.959
+	 data[0][0][1] =  -204.925
+	 data[0][0][2] =  3652.353
+	 data[0][0][3] =  -204.925
+	 data[0][0][4] = -1891.959
+
+TableName = 00yEndSpoil code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] = -1118.314
+	 data[0][0][1] =  3341.822
+	 data[0][0][2] =    -2.676
+	 data[0][0][3] = -3347.174
+	 data[0][0][4] =  1112.962
+
+TableName = 00zEndSpoil code = 15 length = 38
+	 FIFO Table Data dim = 3 Ccode = 65535
+	 Dim[1][1][5]		(Slab)(PE1)(PE2)
+	 data[0][0][0] = -10150.312
+	 data[0][0][1] = -8688.006
+	 data[0][0][2] = -7225.700
+	 data[0][0][3] = -5763.394
+	 data[0][0][4] = -4301.088
+
+TableName = 00xEndFall code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -3.411
+
+TableName = 00yEndFall code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -2.676
+
+TableName = 00zEndFall code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =     9.667
+
+TableName = 00xWaitTime code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -3.411
+
+TableName = 00yWaitTime code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -2.676
+
+TableName = 00zWaitTime code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =     9.667
+
+TableName = 00xEndTime code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -3.411
+
+TableName = 00yEndTime code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =    -2.676
+
+TableName = 00zEndTime code = 15 length = 14
+	 FIFO Table Data dim = 1 Ccode = 65535
+	 Dim[1]		(Slab)
+	 data[0] =     9.667
+
